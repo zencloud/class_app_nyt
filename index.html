@@ -30,39 +30,38 @@
                 
                 <!-- Search Input -->
                 <h2>Search:</h2>
-                <input required type="text" placeholder="Search..." id="app_input_search" class="border">
+                <input type="text" value="Hong Kong" id="app_input_search" class="border">
                 
                 <!-- Search Result Total -->
                 <h2>Number of Records:</h2>
-                <select>
+                <select id="app_record_count">
                     <option value="1">1 Article</option>
-                    <option value="5">5 Articles</option>
+                    <option value="5" selected>5 Articles</option>
                     <option value="10">10 Articles</option>
                 </select>
 
                 <!-- Date Range Start -->
                 <h2>Start Date</h2>
-                <input type="number" placeholder="YYYY" min="1980" max="2019" id="app_input_search" class="border">
+                <input onKeyPress="if(this.value.length==4) return false;" type="text" pattern="/^-?\d+\.?\d*$/" value="2002" id="app_input_year_start" class="border">
                 
                 <!-- Date Range End -->
                 <h2>End Date</h2>
-                <input type="number" placeholder="YYYY" min="1980" max="2019" id="app_input_search" class="border">
+                <input onKeyPress="if(this.value.length==4) return false;" type="text" pattern="/^-?\d+\.?\d*$/" value="2019" id="app_input_year_end" class="border">
 
                 <!-- Input Buttons -->
-                <button id="btn-submit">Submit</button>
-                <button id="btn-reset">Reset</button>
+                <button id="btn-submit">Search</button>
+                <button id="btn-reset">Clear Search Results</button>
             </div>
         </div>
         
         <!-- Articles -->
         <div class="app_container_articles box">
                 <div class="app_content_header">
-                    <p><i class="fas fa-list-alt"></i> Search Options</p>
+                    <p><i class="fas fa-list-alt"></i> Search Results</p>
                 </div>
-                <div class="app_content border">
+                <div id="app_articles_display" class="app_content border">
                     <div class="app_article_cell">
-                        <h1>Article Header</h1>
-                        <h3>Post Info</h3>
+                        <h3>Articles...</h3>
                     </div>
                 </div>
             </div>
