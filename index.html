@@ -30,7 +30,7 @@
                 
                 <!-- Search Input -->
                 <h2>Search:</h2>
-                <input required type="text" id="app_input_search" class="border">
+                <input required type="text" placeholder="Search..." id="app_input_search" class="border">
                 
                 <!-- Search Result Total -->
                 <h2>Number of Records:</h2>
@@ -42,7 +42,7 @@
 
                 <!-- Date Range Start -->
                 <h2>Start Date</h2>
-                <input type="number" placeholder="YYYY" min="1980" max="2019" id="app_input_search" pattern='[0-1][0-9]' class="border">
+                <input type="number" placeholder="YYYY" min="1980" max="2019" id="app_input_search" class="border">
                 
                 <!-- Date Range End -->
                 <h2>End Date</h2>
@@ -54,8 +54,14 @@
         </div>
         
         <!-- Articles -->
-        <div class="app_container_articles box-round border">
-            Articles
+        <div class="app_container_articles box">
+            <div class="app_content_header">
+                <p><i class="fas fa-list-alt"></i> Search Results</p>
+            </div>
+
+            <div class="app_content border">
+                <p>Search Results</p>
+            </div>
         </div>
     </div>
 
