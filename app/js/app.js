@@ -52,9 +52,6 @@ function app_start_search() {
     appData.apiYearStart   = $('#app_input_year_start').val();
     appData.apiYearEnd     = $('#app_input_year_end').val();
 
-    console.log(appData.apiURL())
-
-
     // Send request
     $.get(appData.apiURL(), function(response) {
 
