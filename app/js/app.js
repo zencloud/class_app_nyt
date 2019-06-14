@@ -1,15 +1,39 @@
+/// --- Main App
+/// --- NYT Search Result App
 
 
-// Ajax setup
-let apiKey, apiURL;
-apiKey = 'Y064fSObyugIkHGsgpBbKtYy6JmTG1xW';
+// App Data Setup
+const appData = {
 
-// Normal Query
-// apiURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=${apiKey}`;
+    // Core api request variables
+    apiKey:       'Y064fSObyugIkHGsgpBbKtYy6JmTG1xW',
+    apiSearch:    '',
+    apiYearStart: 1980,
+    apiYearEnd:   2019,
+    
+    // Piece together the URL to query based on our api variables
+    appURL: function () {
+        return `https://api.nytimes.com/svc/search/v2/articlesearch.json?
+                fq=Hong+Kong
+                &begin_date=${this.apiYearStart}0101
+                &end_date=${this.apiYearEnd}0101
+                &api-key=${this.apiKey}
+            `;
+    }
+}
 
-// Filtered Query
-//apiURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=Hong+Kong&facet_field=day_of_week&facet=true&begin_date=20190612&api-key=${apiKey}`;
 
-$.get(apiURL, function(data) {
-    console.log(data);
+// Attach listener when document is ready
+$(document).ready(function() {
+    $('#btn-submit').on('click', function(e) {
+        e.preventDefault();
+        app_start_search();
+    });
 });
+
+// Functions
+
+
+function app_start_search() {
+    
+}
