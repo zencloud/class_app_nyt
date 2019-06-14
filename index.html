@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="app/css/reset.css">
+    <link rel="stylesheet" href="app/css/style.css">
+    <script src="https://kit.fontawesome.com/d888994262.js"></script>
+    <script src="app/js/jquery-3.4.1.min.js"></script>
+    <title>NYT App</title>
+</head>
+<body>
+
+    <!-- Main Wrapper -->
+    <div id="wrapper">
+        
+        <!-- Header -->
+        <div class="app_container_header box-round">
+                <p><i class="fas fa-newspaper fa-4x"></i></p>
+                <p class="app_header_title">New York Times Search</p>
+        </div>
+
+        <!-- Search  -->
+        <div class="app_container_search box">
+            <div class="app_content_header">
+                <p><i class="fas fa-list-alt"></i> Search Options</p>
+            </div>
+            <div class="app_content border">
+                
+                <!-- Search Input -->
+                <h2>Search:</h2>
+                <input required type="text" id="app_input_search" class="border">
+                
+                <!-- Search Result Total -->
+                <h2>Number of Records:</h2>
+                <select>
+                    <option value="1">1 Article</option>
+                    <option value="5">5 Articles</option>
+                    <option value="10">10 Articles</option>
+                </select>
+
+                <!-- Date Range Start -->
+                <h2>Start Date</h2>
+                <input type="number" placeholder="YYYY" min="1980" max="2019" id="app_input_search" pattern='[0-1][0-9]' class="border">
+                
+                <!-- Date Range End -->
+                <h2>End Date</h2>
+                <input type="number" placeholder="YYYY" min="1980" max="2019" id="app_input_search" class="border">
+
+                <button>Submit</button>
+                <button>Reset</button>
+            </div>
+        </div>
+        
+        <!-- Articles -->
+        <div class="app_container_articles box-round border">
+            Articles
+        </div>
+    </div>
+
+
+    <script src="app/js/app.js"></script>
+</body>
+</html>
