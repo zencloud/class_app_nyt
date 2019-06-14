@@ -4,6 +4,10 @@
 
 /* ----------------- Sitewide Styles */
 
+:root {
+    --site-width: 70%;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -16,9 +20,17 @@ body, html {
     color: #282828;
 }
 
+h1 {
+    font-size: 18px;
+}
+
 h2 {
     font-size: 14px;
     padding-top: 15px;
+}
+
+h3 {
+    font-size: 14px;
 }
 
 input, select {
@@ -46,7 +58,7 @@ button {
 
 .box, .box-round {
     margin: 0 auto;
-    width: 70%;
+    width: var(--site-width);
     height: max-content;
     background-color: white;
     padding: 10px;
@@ -108,10 +120,6 @@ button {
     padding-right: 10px;
 }
 
-#app_input_search {
-
-}
-
 #app_input_search:focus {
     transition: border .3s linear;  /* Sweet Fade Focus */
     outline: none;
@@ -122,5 +130,33 @@ button {
 /* ----------------- Articles */
 
 .app_container_articles {
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.app_article_cell {
+    margin: 10px;
+    padding: 10px;
+    background-color: #b7e1f1;
+}
+
+.app_article_cell > h1::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #09569e;
+    border-radius: 100px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+
+/* ----------------- Responsive Adjustment */
+
+/* 720px or smaller */
+@media only screen and (max-width: 720px) {
     
+    :root {
+        --site-width: 100%;
+    }
 }
